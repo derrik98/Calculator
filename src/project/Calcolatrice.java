@@ -38,7 +38,7 @@ public class Calcolatrice extends Application{
 	public static final int number9 = 9;
 	public static double x;
 	public static double y;
-	public static boolean result = false;
+	public static boolean RESULT = false;
 	
 	public static void main(String[] args){
 		launch(args);
@@ -129,11 +129,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number0);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -155,11 +155,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number1);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -181,11 +181,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number2);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -207,11 +207,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number3);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -233,11 +233,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number4);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -259,11 +259,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number5);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -285,11 +285,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number6);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -311,11 +311,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number7);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -336,11 +336,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number8);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -362,11 +362,11 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || OP1ERATION.equals("error")) {
+				if(RESULT || OP1ERATION.equals("error")) {
 					OP1ERATION = "";
 					OP1 = String.valueOf(number9);
 					OP2 = "";
-					result = false;
+					RESULT = false;
 					SYMBOL = "";
 					display.setText(OP1ERATION);
 				}
@@ -404,7 +404,7 @@ public class Calcolatrice extends Application{
 			@Override
 			public void handle(ActionEvent event) {
 				if(!OP1.equals("") && !OP2.equals("") && !SYMBOL.equals("")) {
-					result = true;
+					RESULT = true;
 					if(SYMBOL.equals("+")) {
 						display.setText(sum(Double.valueOf(OP1), Double.valueOf(OP2)));
 					}
@@ -450,7 +450,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "+";
 				}
 				OP2 = "";
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 			}
 		});
@@ -469,7 +469,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "-";
 				}
 				OP2 = "";
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 			}
 		});
@@ -487,7 +487,7 @@ public class Calcolatrice extends Application{
 					OP1ERATION += "*";
 					SYMBOL = "*";
 				OP2 = "";
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 				}
 			}
@@ -507,7 +507,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "/";
 				}
 				OP2 = "";
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 			}
 		});
@@ -520,7 +520,7 @@ public class Calcolatrice extends Application{
 				SYMBOL = "";
 				OP1 = "";
 				OP2 = "";
-				result = false;
+				RESULT = false;
 				display.setText("");
 			}
 		});
@@ -539,7 +539,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "^";
 				}
 				OP2 = "";
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 			}
 		});
@@ -559,7 +559,7 @@ public class Calcolatrice extends Application{
 				}
 				OP2 = OP1;
 				OP1 = "";
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 			}
 		});
@@ -569,7 +569,7 @@ public class Calcolatrice extends Application{
 			@Override
 			public void handle(ActionEvent event) {
 				
-				if(!result) {
+				if(!RESULT) {
 					if(!OP1.equals("") || !OP2.equals("")) {
 						if(!SYMBOL.equals("") && (OP1ERATION.substring(OP1ERATION.length()-1, OP1ERATION.length()).equals(SYMBOL))) {
 							SYMBOL = "";
@@ -601,7 +601,7 @@ public class Calcolatrice extends Application{
 					OP1 = OP1.substring(0, OP1.length()-1);
 					OP1ERATION = OP1;
 				}
-				result = false;
+				RESULT = false;
 				display.setText(OP1ERATION);
 			}
 		});
