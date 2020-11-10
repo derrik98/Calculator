@@ -1,44 +1,20 @@
 package project;
 
-import java.awt.Component;
-import java.awt.Font;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import javafx.scene.input.KeyEvent;
-
-import javax.swing.InputMap;
-import javax.swing.JComponent;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent.EventType;
-
-import org.apache.log4j.BasicConfigurator;
-import org.apache.log4j.Logger;
-
 import javafx.application.Application;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyCode;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.stage.*;
-import javax.swing.JButton;
 
 public class Calcolatrice extends Application{
 
@@ -130,16 +106,14 @@ public class Calcolatrice extends Application{
         buttonLayout.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         for (int rowIndex = 0; rowIndex < 4; rowIndex++) {
             RowConstraints rc = new RowConstraints();
-            rc.setVgrow(Priority.ALWAYS) ; // allow row to grow
-            rc.setFillHeight(true); // ask nodes to fill height for row
-            // other settings as needed...
+            rc.setVgrow(Priority.ALWAYS);
+            rc.setFillHeight(true);
             buttonLayout.getRowConstraints().add(rc);
         }
         for (int colIndex = 0; colIndex < 5; colIndex++) {
             ColumnConstraints cc = new ColumnConstraints();
-            cc.setHgrow(Priority.ALWAYS) ; // allow column to grow
-            cc.setFillWidth(true); // ask nodes to fill space for column
-            // other settings as needed...
+            cc.setHgrow(Priority.ALWAYS);
+            cc.setFillWidth(true);
             buttonLayout.getColumnConstraints().add(cc);
         }
 
@@ -174,8 +148,6 @@ public class Calcolatrice extends Application{
 				}
 				
 				operation += number0;
-				System.out.println(op + "," + op1 + "," + symbol);
-				System.out.println("PROVA" + "√");
 				display.setText(operation);
 			}
 		});
@@ -202,7 +174,6 @@ public class Calcolatrice extends Application{
 				}
 				
 				operation += number1;
-				System.out.println(op + "," + op1 + "," + symbol);
 				display.setText(operation);
 			}
 		});
@@ -229,8 +200,6 @@ public class Calcolatrice extends Application{
 				}
 				
 				operation += number2;
-				System.out.println(op + "," + op1 + "," + symbol);
-				System.out.println(operation.substring(operation.length()-1));
 				display.setText(operation);
 			}
 		});
@@ -431,7 +400,7 @@ public class Calcolatrice extends Application{
 		});
 		
 
-		listButton.get(11).setOnAction(new EventHandler<ActionEvent>() {/////////////////////////////////////UGUALE
+		listButton.get(11).setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
 			public void handle(ActionEvent event) {
@@ -452,14 +421,11 @@ public class Calcolatrice extends Application{
 					else if(symbol == "^") {
 						display.setText(exp(Double.valueOf(op), Double.valueOf(op1)));
 					}
-					System.out.println(Double.valueOf(op)+ "," + Double.valueOf(op1) + "," + symbol);
 					operation = display.getText();
 					op = operation;
-					//System.out.println(Double.valueOf(op)+ "," + Double.valueOf(op1) + "," + symbol);
 				}
 				else if(op == "" && op1 != "" && symbol.equals("√")) {
 					display.setText(radq(Double.valueOf(op1)));
-					System.out.println(Double.valueOf(op1)+ "," + Double.valueOf(op1) + "," + symbol);
 					operation = display.getText();
 					op1 = operation;
 				}
@@ -485,8 +451,6 @@ public class Calcolatrice extends Application{
 				}
 				op1 = "";
 				result = false;
-				System.out.println(symbol + "," +  op + "," + op1 + "," + operation);
-				System.out.println(operation.substring(0, operation.length()-1));
 				display.setText(operation);
 			}
 		});
@@ -611,19 +575,16 @@ public class Calcolatrice extends Application{
 							symbol = "";
 							op1 = "";
 							operation = operation.substring(0, operation.length()-1);
-							System.out.println("primo caso");
 						}
 						else {
 							if(op.length() >= 1 && op1.length() == 0) {
 								symbol = "";
 								op = op.substring(0, op.length()-1);
 								operation = op;
-								System.out.println("secondo caso");
 							}
 							else if(symbol != "" && op1.length() >= 1){
 								op1 = op1.substring(0, op1.length()-1);
 								operation = operation.substring(0, operation.length()-1);
-								System.out.println("terzo caso");
 							}
 						}
 					}
@@ -632,7 +593,6 @@ public class Calcolatrice extends Application{
 						op = "";
 						op1 = "";
 						symbol = "";
-						System.out.println("4 caso");
 					}
 				}
 				else {
@@ -640,10 +600,8 @@ public class Calcolatrice extends Application{
 					op1 = "";
 					op = op.substring(0, op.length()-1);
 					operation = op;
-					System.out.println("secondo caso");
 				}
 				result = false;
-				System.out.println(op + "," + op1 + "," + operation + "," +symbol);
 				display.setText(operation);
 			}
 		});
@@ -681,7 +639,6 @@ public class Calcolatrice extends Application{
 			return String.valueOf((int)Math.pow(num1, num2));
 		}
 		else {
-			System.out.println(Math.pow(num1, num2));
 			return String.valueOf(Math.pow(num1, num2));
 		}
 	}
@@ -694,7 +651,6 @@ public class Calcolatrice extends Application{
 			return String.valueOf((int)(num1 / num2));
 		}
 		else {
-			System.out.println(num1 / num2);
 			return String.valueOf(num1 / num2);
 		}
 	}
@@ -704,7 +660,6 @@ public class Calcolatrice extends Application{
 			return String.valueOf((int)(num1 * num2));
 		}
 		else {
-			System.out.println(num1 * num2);
 			return String.valueOf(num1 * num2);
 		}
 	}
@@ -714,7 +669,6 @@ public class Calcolatrice extends Application{
 			return String.valueOf((int)(num1 - num2));
 		}
 		else {
-			System.out.println(num1 - num2);
 			return String.valueOf(num1 - num2);
 		}
 	}
@@ -724,7 +678,6 @@ public class Calcolatrice extends Application{
 			return String.valueOf((int)(num1 + num2));
 		}
 		else {
-			System.out.println(num1 + num2);
 			return String.valueOf(num1 + num2);
 		}
 		
