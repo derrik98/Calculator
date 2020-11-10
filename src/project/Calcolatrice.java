@@ -25,20 +25,20 @@ public class Calcolatrice extends Application{
 	public static String operation = "";
 	public static String op = "";
 	public static String op1 = "";
-	private String symbol = "";
-	private final int number0 = 0;
-	private final int number1 = 1;
-	private final int number2 = 2;
-	private final int number3 = 3;
-	private final int number4 = 4;
-	private final int number5 = 5;
-	private final int number6 = 6;
-	private final int number7 = 7;
-	private final int number8 = 8;
-	private final int number9 = 9;
+	public static String symbol = "";
+	public static final int number0 = 0;
+	public static final int number1 = 1;
+	public static final int number2 = 2;
+	public static final int number3 = 3;
+	public static final int number4 = 4;
+	public static final int number5 = 5;
+	public static final int number6 = 6;
+	public static final int number7 = 7;
+	public static final int number8 = 8;
+	public static final int number9 = 9;
 	public static double x;
 	public static double y;
-	public boolean result = false;
+	public static boolean result = false;
 	
 	public static void main(String[] args){
 		launch(args);
