@@ -130,7 +130,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number0);
 					op1 = "";
@@ -139,7 +139,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number0;
 					}
 					else {
@@ -182,7 +182,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number2);
 					op1 = "";
@@ -191,7 +191,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number2;
 					}
 					else {
@@ -208,7 +208,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number3);
 					op1 = "";
@@ -217,7 +217,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number3;
 					}
 					else {
@@ -234,7 +234,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number4);
 					op1 = "";
@@ -243,7 +243,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number4;
 					}
 					else {
@@ -260,7 +260,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number5);
 					op1 = "";
@@ -269,7 +269,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number5;
 					}
 					else {
@@ -286,7 +286,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number6);
 					op1 = "";
@@ -295,7 +295,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number6;
 					}
 					else {
@@ -312,7 +312,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number7);
 					op1 = "";
@@ -321,7 +321,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number7;
 					}
 					else {
@@ -337,7 +337,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number8);
 					op1 = "";
@@ -346,7 +346,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number8;
 					}
 					else {
@@ -363,7 +363,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number9);
 					op1 = "";
@@ -372,7 +372,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number9;
 					}
 					else {
@@ -388,7 +388,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					op += ".";
 				}
 				else {
