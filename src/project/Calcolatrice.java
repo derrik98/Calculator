@@ -22,10 +22,10 @@ public class Calcolatrice extends Application{
 	private static final int HEIGTHWINDOW = 400;
 	
 	public static final TextField display = new TextField("");
-	private static String OPERATION = "";
-	private static String OP1 = "";
-	private static String OP2 = "";
-	private static String SYMBOL = "";
+	private String OPERATION = "";
+	private String OP1 = "";
+	private String OP2 = "";
+	private String SYMBOL = "";
 	public static final int NUMBER0 = 0;
 	public static final int NUMBER1 = 1;
 	public static final int NUMBER2 = 2;
@@ -36,7 +36,7 @@ public class Calcolatrice extends Application{
 	public static final int NUMBER7 = 7;
 	public static final int NUMBER8 = 8;
 	public static final int NUMBER9 = 9;
-	private static boolean RESULT = false;
+	private boolean RESULT = false;
 	
 	public static void main(String[] args){
 		launch(args);
