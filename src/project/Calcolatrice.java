@@ -36,8 +36,6 @@ public class Calcolatrice extends Application{
 	public static final int NUMBER7 = 7;
 	public static final int NUMBER8 = 8;
 	public static final int NUMBER9 = 9;
-	public static double x;
-	public static double y;
 	private static boolean RESULT = false;
 	
 	public static void main(String[] args){
