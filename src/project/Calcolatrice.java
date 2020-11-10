@@ -26,17 +26,19 @@ public class Calcolatrice extends Application{
 	private String OP1 = "";
 	private String OP2 = "";
 	private String SYMBOL = "";
-	public static final int NUMBER0 = 0;
-	public static final int NUMBER1 = 1;
-	public static final int NUMBER2 = 2;
-	public static final int NUMBER3 = 3;
-	public static final int NUMBER4 = 4;
-	public static final int NUMBER5 = 5;
-	public static final int NUMBER6 = 6;
-	public static final int NUMBER7 = 7;
-	public static final int NUMBER8 = 8;
-	public static final int NUMBER9 = 9;
+	private int NUMBER0 = 0;
+	private int NUMBER1 = 1;
+	private int NUMBER2 = 2;
+	private int NUMBER3 = 3;
+	private int NUMBER4 = 4;
+	private int NUMBER5 = 5;
+	private int NUMBER6 = 6;
+	private int NUMBER7 = 7;
+	private int NUMBER8 = 8;
+	private int NUMBER9 = 9;
 	private boolean RESULT = false;
+	private String ERROR = "Error";
+	
 	
 	public static void main(String[] args){
 		launch(args);
@@ -67,8 +69,8 @@ public class Calcolatrice extends Application{
         listButton.add(new Button("√"));
         listButton.add(new Button("←"));
 		
-		for(int i = 0; i < listButton.size() ; i++) {
-			listButton.get(i).setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+		for(int j = 0; j < listButton.size() ; j++) {
+			listButton.get(j).setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		}
 		
 		
@@ -412,7 +414,6 @@ public class Calcolatrice extends Application{
 						display.setText(mul(Double.valueOf(OP1), Double.valueOf(OP2)));
 					}
 					else if(SYMBOL.equals("/")) {
-						System.out.println(OP1 + "," + OP2);
 						display.setText(div(Double.valueOf(OP1), Double.valueOf(OP2)));
 					}
 					else if(SYMBOL.equals("^")) {
@@ -427,7 +428,7 @@ public class Calcolatrice extends Application{
 					OP2 = OPERATION;
 				}
 				else {
-					OPERATION = "error";
+					OPERATION = ERROR;
 				}
 				display.setText(OPERATION);
 			}
@@ -641,9 +642,8 @@ public class Calcolatrice extends Application{
 	}
 
 	protected String div(Double num1, Double num2) {
-		System.out.println(num1 + "," + num2);
 		if(num2 == 0) {
-			return "error";
+			return ERROR;
 		}
 		else if((num1 / num2) == (int)(num1 / num2)) {
 			return String.valueOf((int)(num1 / num2));
