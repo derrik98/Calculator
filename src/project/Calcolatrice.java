@@ -26,7 +26,7 @@ public class Calcolatrice extends Application{
 	private String OP1 = "";
 	private String OP2 = "";
 	private String SYMBOL = "";
-	private int Number_0 = 0;
+	private int Number0 = 0;
 	private int NUMBER1 = 1;
 	private int NUMBER2 = 2;
 	private int NUMBER3 = 3;
@@ -130,7 +130,7 @@ public class Calcolatrice extends Application{
 			public void handle(ActionEvent event) {
 				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
-					OP1 = String.valueOf(Number_0);
+					OP1 = String.valueOf(Number0);
 					OP2 = "";
 					RESULT = false;
 					SYMBOL = "";
@@ -138,14 +138,14 @@ public class Calcolatrice extends Application{
 				}
 				else {
 					if(SYMBOL.equals("")) {
-						OP1 += Number_0;
+						OP1 += Number0;
 					}
 					else {
-						OP2 += Number_0;
+						OP2 += Number0;
 					}
 				}
 				
-				OPERATION += Number_0;
+				OPERATION += Number0;
 				display.setText(OPERATION);
 			}
 		});
