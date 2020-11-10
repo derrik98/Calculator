@@ -1,8 +1,22 @@
 package project;
 
+import java.awt.Component;
 import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import javafx.scene.input.KeyEvent;
+
+import javax.swing.InputMap;
+import javax.swing.JComponent;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.event.DocumentEvent.EventType;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
@@ -16,6 +30,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -23,13 +38,15 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
 import javafx.stage.*;
+import javax.swing.JButton;
 
 public class Calcolatrice extends Application{
 
 	private final int WidthWindow = 400;
 	private final int HeigthWindow = 400;
 	
-	public static TextField display = new TextField("");
+	public static 
+	TextField display = new TextField("");
 	public static String operation = "";
 	public static String op = "";
 	public static String op1 = "";
@@ -47,18 +64,17 @@ public class Calcolatrice extends Application{
 	public static double x;
 	public static double y;
 	public boolean result = false;
-	public static void main(String[] args) {
+	
+	public static void main(String[] args){
 		launch(args);
-
 	}
 	
 	@Override
-	public void start(Stage stage) throws Exception{
+	public void start(Stage stage)throws Exception{
 		stage.setTitle("Calcolatrice");
 		VBox root = new VBox();
 		List<Button> listButton = new ArrayList<Button>();
 		GridPane buttonLayout = new GridPane();
-		
 		display.setMinSize(WidthWindow, HeigthWindow/5);
 		display.setAlignment(Pos.CENTER_RIGHT);
 		display.setStyle("-fx-text-fill: black; -fx-font-size: 28;");
@@ -69,7 +85,7 @@ public class Calcolatrice extends Application{
 			listButton.add(button);
 		}
 		listButton.add(new Button("."));
-        listButton.add(new Button("="));   
+        listButton.add(new Button("=")); 
         listButton.add(new Button("+"));
         listButton.add(new Button("-"));
         listButton.add(new Button("*"));
@@ -130,11 +146,11 @@ public class Calcolatrice extends Application{
         VBox.setVgrow(buttonLayout, Priority.ALWAYS);
         root.getChildren().addAll(display, buttonLayout);
 
-
         Scene scene = new Scene(root, WidthWindow, HeigthWindow);
         stage.setScene(scene);
-        stage.show();        
-
+        stage.show();   
+        
+        
         
 		listButton.get(0).setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -414,6 +430,7 @@ public class Calcolatrice extends Application{
 			}
 		});
 		
+
 		listButton.get(11).setOnAction(new EventHandler<ActionEvent>() {/////////////////////////////////////UGUALE
 			
 			@Override
@@ -457,8 +474,15 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				operation += "+";
-				symbol = "+";
+				if(symbol == "") {
+					operation += "+";
+					symbol = "+";
+				}
+				else {
+					operation = operation.substring(0, operation.length() - 1);
+					operation += "+";
+					symbol = "+";
+				}
 				op1 = "";
 				result = false;
 				System.out.println(symbol + "," +  op + "," + op1 + "," + operation);
@@ -471,8 +495,15 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				operation += "-";
-				symbol = "-";
+				if(symbol == "") {
+					operation += "-";
+					symbol = "-";
+				}
+				else {
+					operation = operation.substring(0, operation.length() - 1);
+					operation += "-";
+					symbol = "-";
+				}
 				op1 = "";
 				result = false;
 				display.setText(operation);
@@ -483,11 +514,18 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				operation += "*";
-				symbol = "*";
+				if(symbol == "") {
+					operation += "*";
+					symbol = "*";
+				}
+				else {
+					operation = operation.substring(0, operation.length() - 1);
+					operation += "*";
+					symbol = "*";
 				op1 = "";
 				result = false;
 				display.setText(operation);
+				}
 			}
 		});
 		
@@ -495,8 +533,15 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				operation += "/";
-				symbol = "/";
+				if(symbol == "") {
+					operation += "*";
+					symbol = "*";
+				}
+				else {
+					operation = operation.substring(0, operation.length() - 1);
+					operation += "*";
+					symbol = "*";
+				}
 				op1 = "";
 				result = false;
 				display.setText(operation);
@@ -520,8 +565,15 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				operation += "^";
-				symbol = "^";
+				if(symbol == "") {
+					operation += "^";
+					symbol = "^";
+				}
+				else {
+					operation = operation.substring(0, operation.length() - 1);
+					operation += "^";
+					symbol = "^";
+				}
 				op1 = "";
 				result = false;
 				display.setText(operation);
@@ -532,8 +584,15 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				operation += "√";
-				symbol = "√";
+				if(symbol == "") {
+					operation += "√";
+					symbol = "√";
+				}
+				else {
+					operation = operation.substring(0, operation.length() - 1);
+					operation += "√";
+					symbol = "√";
+				}
 				op1 = op;
 				op = "";
 				result = false;
@@ -544,7 +603,7 @@ public class Calcolatrice extends Application{
 		listButton.get(19).setOnAction(new EventHandler<ActionEvent>() {
 			
 			@Override
-			public void handle(ActionEvent event) {////////////////////////////////////////////	rivedere cancellazione con doppio simbolo
+			public void handle(ActionEvent event) {
 				
 				if(!result) {
 					if(op != "" || op1 != "" ) {
@@ -670,5 +729,4 @@ public class Calcolatrice extends Application{
 		}
 		
 	}
-
 }
