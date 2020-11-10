@@ -18,11 +18,10 @@ import javafx.stage.*;
 
 public class Calcolatrice extends Application{
 
-	private final int widthWindow = 400;
-	private final int heigthWindow = 400;
+	private static final int widthWindow = 400;
+	private static final int heigthWindow = 400;
 	
-	public static 
-	TextField display = new TextField("");
+	public static final TextField display = new TextField("");
 	public static String operation = "";
 	public static String op = "";
 	public static String op1 = "";
