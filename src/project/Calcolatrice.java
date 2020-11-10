@@ -21,7 +21,7 @@ public class Calcolatrice extends Application{
 	private static final int WIDTHWINDOW = 400;
 	private static final int HEIGTHWINDOW = 400;
 	
-	public static final TextField display = new TextField("");
+	private TextField display = new TextField("");
 	private String OPERATION = "";
 	private String OP1 = "";
 	private String OP2 = "";
@@ -48,7 +48,7 @@ public class Calcolatrice extends Application{
 	public void start(Stage stage){
 		stage.setTitle("Calcolatrice");
 		VBox root = new VBox();
-		List<Button> listButton = new ArrayList<Button>();
+		List<Button> listButton = new ArrayList<>();
 		GridPane buttonLayout = new GridPane();
 		display.setMinSize(WIDTHWINDOW, HEIGTHWINDOW/5);
 		display.setAlignment(Pos.CENTER_RIGHT);
@@ -611,7 +611,6 @@ public class Calcolatrice extends Application{
 			return String.valueOf((int)Math.sqrt(num1));
 		}
 		else {
-			System.out.println(Math.sqrt(num1));
 			return String.valueOf(Math.sqrt(num1));
 		}
 	}
@@ -622,12 +621,6 @@ public class Calcolatrice extends Application{
 		}
 		else {
 			str1 = str1.substring(0, str1.length()-1);
-			if(str2.equals("")) {
-				num1 = num1.substring(0, num1.length()-1);
-			}
-			else {
-				num2 = num2.substring(0, num2.length()-1);
-			}
 			return str1;
 		}
 	}
