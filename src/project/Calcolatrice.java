@@ -403,27 +403,27 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(op != "" && op1 != "" && symbol != "") {
+				if(!op.equals("") && !op1.equals("") && !symbol.equals("")) {
 					result = true;
-					if(symbol == "+") {
+					if(symbol.equals("+")) {
 						display.setText(sum(Double.valueOf(op), Double.valueOf(op1)));
 					}
-					else if(symbol == "-") {
+					else if(symbol.equals("-")) {
 						display.setText(sub(Double.valueOf(op), Double.valueOf(op1)));
 					}
-					else if(symbol == "*") {
+					else if(symbol.equals("*")) {
 						display.setText(mul(Double.valueOf(op), Double.valueOf(op1)));
 					}
-					else if(symbol == "/") {
+					else if(symbol.equals("/")) {
 						display.setText(div(Double.valueOf(op), Double.valueOf(op1)));
 					}
-					else if(symbol == "^") {
+					else if(symbol.equals("^")) {
 						display.setText(exp(Double.valueOf(op), Double.valueOf(op1)));
 					}
 					operation = display.getText();
 					op = operation;
 				}
-				else if(op == "" && op1 != "" && symbol.equals("√")) {
+				else if(op.equals("") && !op1.equals("") && symbol.equals("√")) {
 					display.setText(radq(Double.valueOf(op1)));
 					operation = display.getText();
 					op1 = operation;
@@ -439,7 +439,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					operation += "+";
 					symbol = "+";
 				}
@@ -458,7 +458,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					operation += "-";
 					symbol = "-";
 				}
@@ -477,7 +477,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					operation += "*";
 					symbol = "*";
 				}
@@ -496,7 +496,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					operation += "*";
 					symbol = "*";
 				}
@@ -528,7 +528,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					operation += "^";
 					symbol = "^";
 				}
@@ -547,7 +547,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(symbol == "") {
+				if(symbol.equals("")) {
 					operation += "√";
 					symbol = "√";
 				}
@@ -569,8 +569,8 @@ public class Calcolatrice extends Application{
 			public void handle(ActionEvent event) {
 				
 				if(!result) {
-					if(op != "" || op1 != "" ) {
-						if(symbol != "" && (operation.substring(operation.length()-1, operation.length()).equals(symbol))) {
+					if(!op.equals("") || !op1.equals("")) {
+						if(!symbol.equals("") && (operation.substring(operation.length()-1, operation.length()).equals(symbol))) {
 							symbol = "";
 							op1 = "";
 							operation = operation.substring(0, operation.length()-1);
@@ -623,7 +623,7 @@ public class Calcolatrice extends Application{
 		}
 		else {
 			str1 = str1.substring(0, str1.length()-1);
-			if(str2 == "") {
+			if(str2.equals("")) {
 				num1 = num1.substring(0, num1.length()-1);
 			}
 			else {
@@ -643,7 +643,7 @@ public class Calcolatrice extends Application{
 	}
 
 	protected String div(Double num1, Double num2) {
-		if(num2 == 0) {
+		if(num2.equals(0)) {
 			return "error";
 		}
 		if((num1 / num2) == (int)(num1 / num2)) {
