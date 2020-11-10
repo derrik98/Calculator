@@ -18,8 +18,8 @@ import javafx.stage.*;
 
 public class Calcolatrice extends Application{
 
-	private final int WidthWindow = 400;
-	private final int HeigthWindow = 400;
+	private final int widthWindow = 400;
+	private final int heigthWindow = 400;
 	
 	public static 
 	TextField display = new TextField("");
@@ -51,7 +51,7 @@ public class Calcolatrice extends Application{
 		VBox root = new VBox();
 		List<Button> listButton = new ArrayList<Button>();
 		GridPane buttonLayout = new GridPane();
-		display.setMinSize(WidthWindow, HeigthWindow/5);
+		display.setMinSize(widthWindow, heigthWindow/5);
 		display.setAlignment(Pos.CENTER_RIGHT);
 		display.setStyle("-fx-text-fill: black; -fx-font-size: 28;");
 		//display.textProperty().bind(Bindings.format("%.0f"));
@@ -120,7 +120,7 @@ public class Calcolatrice extends Application{
         VBox.setVgrow(buttonLayout, Priority.ALWAYS);
         root.getChildren().addAll(display, buttonLayout);
 
-        Scene scene = new Scene(root, WidthWindow, HeigthWindow);
+        Scene scene = new Scene(root, widthWindow, heigthWindow);
         stage.setScene(scene);
         stage.show();   
         
@@ -156,7 +156,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(result || operation == "error") {
+				if(result || operation.equals("error")) {
 					operation = "";
 					op = String.valueOf(number1);
 					op1 = "";
@@ -165,7 +165,7 @@ public class Calcolatrice extends Application{
 					display.setText(operation);
 				}
 				else {
-					if(symbol == "") {
+					if(symbol.equals("")) {
 						op += number1;
 					}
 					else {
