@@ -128,7 +128,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER0);
 					OP2 = "";
@@ -154,7 +154,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER1);
 					OP2 = "";
@@ -180,7 +180,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER2);
 					OP2 = "";
@@ -206,7 +206,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER3);
 					OP2 = "";
@@ -232,7 +232,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER4);
 					OP2 = "";
@@ -258,7 +258,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER5);
 					OP2 = "";
@@ -284,7 +284,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER6);
 					OP2 = "";
@@ -310,7 +310,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER7);
 					OP2 = "";
@@ -335,7 +335,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER8);
 					OP2 = "";
@@ -361,7 +361,7 @@ public class Calcolatrice extends Application{
 			
 			@Override
 			public void handle(ActionEvent event) {
-				if(RESULT || OPERATION.equals("error")) {
+				if(RESULT || OPERATION.equals(ERROR)) {
 					OPERATION = "";
 					OP1 = String.valueOf(NUMBER9);
 					OP2 = "";
