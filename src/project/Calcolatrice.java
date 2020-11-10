@@ -2,6 +2,9 @@ package project;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.JButton;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -14,6 +17,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.*;
 
 public class Calcolatrice extends Application{
@@ -53,9 +58,11 @@ public class Calcolatrice extends Application{
 		display.setMinSize(WIDTHWINDOW, HEIGTHWINDOW/5);
 		display.setAlignment(Pos.CENTER_RIGHT);
 		display.setStyle("-fx-text-fill: black; -fx-font-size: 28;");
+		Font font = new Font("Arial", 16);
 		
 		for(int i = 0; i < 10; i++) {
 			Button button = new Button(Integer.toString(i));
+			button.setStyle("-fx-text-fill: black; -fx-background-color: white");
 			listButton.add(button);
 		}
 		listButton.add(new Button("."));
@@ -70,6 +77,7 @@ public class Calcolatrice extends Application{
         listButton.add(new Button("←"));
 		
 		for(int j = 0; j < listButton.size() ; j++) {
+			listButton.get(j).setFont(font);
 			listButton.get(j).setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
 		}
 		
