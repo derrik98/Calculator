@@ -18,8 +18,8 @@ import javafx.stage.*;
 
 public class Calcolatrice extends Application{
 
-	private static final int widthWindow = 400;
-	private static final int heigthWindow = 400;
+	private static final int WIDTHWINDOW = 400;
+	private static final int HEIGTHWINDOW = 400;
 	
 	public static final TextField display = new TextField("");
 	public static String operation = "";
@@ -50,7 +50,7 @@ public class Calcolatrice extends Application{
 		VBox root = new VBox();
 		List<Button> listButton = new ArrayList<Button>();
 		GridPane buttonLayout = new GridPane();
-		display.setMinSize(widthWindow, heigthWindow/5);
+		display.setMinSize(WIDTHWINDOW, HEIGTHWINDOW/5);
 		display.setAlignment(Pos.CENTER_RIGHT);
 		display.setStyle("-fx-text-fill: black; -fx-font-size: 28;");
 		//display.textProperty().bind(Bindings.format("%.0f"));
@@ -119,7 +119,7 @@ public class Calcolatrice extends Application{
         VBox.setVgrow(buttonLayout, Priority.ALWAYS);
         root.getChildren().addAll(display, buttonLayout);
 
-        Scene scene = new Scene(root, widthWindow, heigthWindow);
+        Scene scene = new Scene(root, WIDTHWINDOW, HEIGTHWINDOW);
         stage.setScene(scene);
         stage.show();   
         
