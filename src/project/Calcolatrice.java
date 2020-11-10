@@ -2,9 +2,6 @@ package project;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JButton;
-
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -17,7 +14,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.RowConstraints;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.*;
 
@@ -85,27 +81,27 @@ public class Calcolatrice extends Application{
 		buttonLayout.add(listButton.get(7), 0, 0);
         buttonLayout.add(listButton.get(8), 1, 0);
         buttonLayout.add(listButton.get(9), 2, 0);
-        buttonLayout.add(listButton.get(12), 3, 0);	//+
-        buttonLayout.add(listButton.get(16), 4, 0);	//Canc
+        buttonLayout.add(listButton.get(12), 3, 0);
+        buttonLayout.add(listButton.get(16), 4, 0);
 
 
         buttonLayout.add(listButton.get(4), 0, 1);
         buttonLayout.add(listButton.get(5), 1, 1);
         buttonLayout.add(listButton.get(6), 2, 1);
         buttonLayout.add(listButton.get(13), 3, 1);
-        buttonLayout.add(listButton.get(17), 4, 1);	//^
+        buttonLayout.add(listButton.get(17), 4, 1);
 
         buttonLayout.add(listButton.get(1), 0, 2);
         buttonLayout.add(listButton.get(2), 1, 2);
         buttonLayout.add(listButton.get(3), 2, 2);
         buttonLayout.add(listButton.get(14), 3, 2);
-        buttonLayout.add(listButton.get(18), 4, 2);	//radq
+        buttonLayout.add(listButton.get(18), 4, 2);
 
         buttonLayout.add(listButton.get(0), 0, 3);
         buttonLayout.add(listButton.get(10), 1, 3);
         buttonLayout.add(listButton.get(11), 2, 3);
         buttonLayout.add(listButton.get(15), 3, 3);
-        buttonLayout.add(listButton.get(19), 4, 3);	//UNDO
+        buttonLayout.add(listButton.get(19), 4, 3);
 
 
         buttonLayout.setGridLinesVisible(true);
