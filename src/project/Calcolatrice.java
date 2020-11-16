@@ -447,7 +447,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "+";
 				}
 				else {
-					OPERATION = OPERATION.substring(0, OPERATION.length() - 1);
+					OPERATION = OPERATION.substring(0, OPERATION.length());
 					OPERATION += "+";
 					SYMBOL = "+";
 				}
@@ -466,7 +466,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "-";
 				}
 				else {
-					OPERATION = OPERATION.substring(0, OPERATION.length() - 1);
+					OPERATION = OPERATION.substring(0, OPERATION.length());
 					OPERATION += "-";
 					SYMBOL = "-";
 				}
@@ -485,7 +485,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "*";
 				}
 				else {
-					OPERATION = OPERATION.substring(0, OPERATION.length() - 1);
+					OPERATION = OPERATION.substring(0, OPERATION.length());
 					OPERATION += "*";
 					SYMBOL = "*";
 				OP2 = "";
@@ -504,7 +504,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "/";
 				}
 				else {
-					OPERATION = OPERATION.substring(0, OPERATION.length() - 1);
+					OPERATION = OPERATION.substring(0, OPERATION.length());
 					OPERATION += "/";
 					SYMBOL = "/";
 				}
@@ -536,7 +536,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "^";
 				}
 				else {
-					OPERATION = OPERATION.substring(0, OPERATION.length() - 1);
+					OPERATION = OPERATION.substring(0, OPERATION.length());
 					OPERATION += "^";
 					SYMBOL = "^";
 				}
@@ -555,7 +555,7 @@ public class Calcolatrice extends Application{
 					SYMBOL = "√";
 				}
 				else {
-					OPERATION = OPERATION.substring(0, OPERATION.length() - 1);
+					OPERATION = OPERATION.substring(0, OPERATION.length());
 					OPERATION += "√";
 					SYMBOL = "√";
 				}
