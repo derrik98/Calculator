@@ -34,7 +34,7 @@ public class Calculator extends Application {
     public Button number_8 = new Button();
     @FXML
     public Button number_9 = new Button();
-    
+
     private String OPERATION = "";
     private String OP1 = "";
     private final String ERROR = "Error";
