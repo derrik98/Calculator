@@ -51,7 +51,7 @@
         <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
         </VBox.margin>
-        <Button fx:id="number_7" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
+        <Button fx:id="number7" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
                 maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
                 onMouseClicked="#selectNumber" text="7">
             <font>
@@ -61,7 +61,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number4" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="4" GridPane.rowIndex="1">
             <font>
@@ -71,7 +71,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number1" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="1" GridPane.rowIndex="2">
             <font>
@@ -81,7 +81,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="0" GridPane.rowIndex="3">
             <font>
@@ -91,7 +91,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_8" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
+        <Button fx:id="number8" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
                 maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
                 onMouseClicked="#selectNumber" text="8" GridPane.columnIndex="1">
             <GridPane.margin>
@@ -104,7 +104,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <font>
@@ -114,7 +114,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number2" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="2" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <font>
@@ -124,7 +124,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_9" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
+        <Button fx:id="number9" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308"
                 maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false"
                 onMouseClicked="#selectNumber" text="9" GridPane.columnIndex="2">
             <font>
@@ -134,7 +134,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number6" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <font>
@@ -144,7 +144,7 @@
                 <Cursor fx:constant="HAND"/>
             </cursor>
         </Button>
-        <Button fx:id="number_3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
+        <Button fx:id="number3" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308"
                 minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#selectNumber"
                 text="3" GridPane.columnIndex="2" GridPane.rowIndex="2">
             <font>

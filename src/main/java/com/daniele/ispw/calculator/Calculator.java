@@ -15,30 +15,30 @@ import java.util.ArrayList;
 public class Calculator extends Application {
 
     @FXML
-    public Button number_0 = new Button();
+    public Button number0 = new Button();
     @FXML
-    public Button number_1 = new Button();
+    public Button number1 = new Button();
     @FXML
-    public Button number_2 = new Button();
+    public Button number2 = new Button();
     @FXML
-    public Button number_3 = new Button();
+    public Button number3 = new Button();
     @FXML
-    public Button number_4 = new Button();
+    public Button number4 = new Button();
     @FXML
-    public Button number_5 = new Button();
+    public Button number5 = new Button();
     @FXML
-    public Button number_6 = new Button();
+    public Button number6 = new Button();
     @FXML
-    public Button number_7 = new Button();
+    public Button number7 = new Button();
     @FXML
-    public Button number_8 = new Button();
+    public Button number8 = new Button();
     @FXML
-    public Button number_9 = new Button();
+    public Button number9 = new Button();
 
-    private String OPERATION = "";
-    private String OP1 = "";
-    private final String ERROR = "Error";
-    private String SYMBOL = "";
+    private String operation = "";
+    private String op1 = "";
+    private final String error = "Error";
+    public String symbol = "";
     private final ArrayList<String> list = new ArrayList<>();
     Button b = new Button();
 
@@ -65,39 +65,39 @@ public class Calculator extends Application {
     public void selectNumber(MouseEvent mouseEvent) {
 
         b = (Button) mouseEvent.getSource();
-        if (OPERATION.equals(ERROR)) {
+        if (operation.equals(error)) {
             list.clear();
             displayRes.setText("");
-            OPERATION = "";
-            OP1 = b.getText();
-            list.add(OP1);
-            SYMBOL = "";
-            OPERATION = b.getText();
-            display.setText(OPERATION);
+            operation = "";
+            op1 = b.getText();
+            list.add(op1);
+            symbol = "";
+            operation = b.getText();
+            display.setText(operation);
         } else {
-            OP1 += b.getText();
-            OPERATION += b.getText();
-            if (OP1.length() > 1) {
-                list.set(list.size() - 1, OP1);
+            op1 += b.getText();
+            operation += b.getText();
+            if (op1.length() > 1) {
+                list.set(list.size() - 1, op1);
                 calculateResult(list);
             } else {
-                list.add(OP1);
+                list.add(op1);
                 calculateResult(list);
             }
-            display.setText(OPERATION);
+            display.setText(operation);
         }
     }
 
     public void selectSymbol(MouseEvent mouseEvent) {
         b = (Button) mouseEvent.getSource();
-        if (!SYMBOL.equals("")) {
-            OP1 = displayRes.getText();
+        if (!symbol.equals("")) {
+            op1 = displayRes.getText();
         }
-        OPERATION += b.getText();
-        SYMBOL = b.getText();
-        OP1 = "";
-        display.setText(OPERATION);
-        list.add(SYMBOL);
+        operation += b.getText();
+        symbol = b.getText();
+        op1 = "";
+        display.setText(operation);
+        list.add(symbol);
     }
 
     @SuppressWarnings("SuspiciousListRemoveInLoop")
@@ -105,11 +105,11 @@ public class Calculator extends Application {
 
         ArrayList<String> alsCopy = new ArrayList<>(als);
         if (alsCopy.get(0).equals("+") || alsCopy.get(0).equals("-") || alsCopy.get(0).equals("*") || alsCopy.get(0).equals("/") || alsCopy.get(0).equals(".") || alsCopy.get(0).equals("^")) {
-            OPERATION = ERROR;
-            displayRes.setText(ERROR);
+            operation = error;
+            displayRes.setText(error);
             return;
         }
-        while ((!(alsCopy.size() == 1))) {
+        while ((alsCopy.size() != 1)) {
             for (int i = 0; i <= alsCopy.size() - 1; i++) {
                 if (alsCopy.get(i).equals("^") || alsCopy.get(i).equals("/") || alsCopy.get(i).equals("*")) {
                     String o1Copy = alsCopy.get(i - 1);
@@ -156,26 +156,30 @@ public class Calculator extends Application {
                     try {
                         displayRes.setText(div(Double.valueOf(op1), Double.valueOf(op2)));
                         return div(Double.valueOf(op1), Double.valueOf(op2));
-                    } catch (divException e) {
-                        display.setText(ERROR);
+                    } catch (DivException e) {
+                        display.setText(error);
                     }
                 }
                 case "^" -> {
                     displayRes.setText(exp(Double.valueOf(op1), Double.valueOf(op2)));
                     return exp(Double.valueOf(op1), Double.valueOf(op2));
                 }
+                default -> {
+                    displayRes.setText(error);
+                    display.setText(error);
+                }
             }
         }
         if (op1.equals("") && !op2.equals("") && symbol.equals("√")) {
             displayRes.setText(radq(Double.valueOf(op2)));
-            OPERATION = display.getText();
+            operation = display.getText();
             return radq(Double.valueOf(op2));
         } else if (op2.equals("") && symbol.equals("")) {
             displayRes.setText("");
             return "";
         } else {
-            displayRes.setText(ERROR);
-            return ERROR;
+            displayRes.setText(error);
+            return error;
         }
 
     }
@@ -208,9 +212,9 @@ public class Calculator extends Application {
     }
 
     //Implementazione tasto di divisione
-    protected String div(Double num1, Double num2) throws divException {
+    protected String div(Double num1, Double num2) throws DivException {
         if (num2 == 0) {
-            throw new divException(ERROR);
+            throw new DivException(error);
         } else if ((num1 / num2) == (int) (num1 / num2)) {
             return String.valueOf((int) (num1 / num2));
         } else {
@@ -239,9 +243,9 @@ public class Calculator extends Application {
 
     //Implementazione tasto C di calcellazione generale
     public void delete() {
-        OPERATION = "";
-        SYMBOL = "";
-        OP1 = "";
+        operation = "";
+        symbol = "";
+        op1 = "";
         display.setText("");
         displayRes.setText("");
         list.clear();
@@ -249,13 +253,13 @@ public class Calculator extends Application {
 
     //Implementazione tasto "uguale"
     public void getResult() {
-        OP1 = displayRes.getText();
-        SYMBOL = "";
-        OPERATION = OP1;
-        display.setText(OPERATION);
+        op1 = displayRes.getText();
+        symbol = "";
+        operation = op1;
+        display.setText(operation);
         displayRes.clear();
         list.clear();
-        list.add(OP1);
+        list.add(op1);
     }
 
 }
