@@ -37,7 +37,7 @@ public class Calculator extends Application {
 
     private String operation = "";
     private String op1 = "";
-    private static final String error = "Error";
+    private static final String ERROR = "Error";
     private String symbol = "";
     private final ArrayList<String> list = new ArrayList<>();
     Button b = new Button();
@@ -65,7 +65,7 @@ public class Calculator extends Application {
     public void selectNumber(MouseEvent mouseEvent) {
 
         b = (Button) mouseEvent.getSource();
-        if (operation.equals(error)) {
+        if (operation.equals(ERROR)) {
             list.clear();
             displayRes.setText("");
             operation = "";
@@ -105,8 +105,8 @@ public class Calculator extends Application {
 
         ArrayList<String> alsCopy = new ArrayList<>(als);
         if (alsCopy.get(0).equals("+") || alsCopy.get(0).equals("-") || alsCopy.get(0).equals("*") || alsCopy.get(0).equals("/") || alsCopy.get(0).equals(".") || alsCopy.get(0).equals("^")) {
-            operation = error;
-            displayRes.setText(error);
+            operation = ERROR;
+            displayRes.setText(ERROR);
             return;
         }
         while ((alsCopy.size() != 1)) {
@@ -157,7 +157,7 @@ public class Calculator extends Application {
                         displayRes.setText(div(Double.valueOf(op1), Double.valueOf(op2)));
                         return div(Double.valueOf(op1), Double.valueOf(op2));
                     } catch (DivException e) {
-                        display.setText(error);
+                        display.setText(ERROR);
                     }
                 }
                 case "^" -> {
@@ -165,8 +165,8 @@ public class Calculator extends Application {
                     return exp(Double.valueOf(op1), Double.valueOf(op2));
                 }
                 default -> {
-                    displayRes.setText(error);
-                    display.setText(error);
+                    displayRes.setText(ERROR);
+                    display.setText(ERROR);
                 }
             }
         }
@@ -178,8 +178,8 @@ public class Calculator extends Application {
             displayRes.setText("");
             return "";
         } else {
-            displayRes.setText(error);
-            return error;
+            displayRes.setText(ERROR);
+            return ERROR;
         }
 
     }
@@ -214,7 +214,7 @@ public class Calculator extends Application {
     //Implementazione tasto di divisione
     protected String div(Double num1, Double num2) throws DivException {
         if (num2 == 0) {
-            throw new DivException(error);
+            throw new DivException(ERROR);
         } else if ((num1 / num2) == (int) (num1 / num2)) {
             return String.valueOf((int) (num1 / num2));
         } else {
