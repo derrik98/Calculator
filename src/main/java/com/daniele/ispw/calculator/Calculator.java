@@ -38,7 +38,7 @@ public class Calculator extends Application {
     private String operation = "";
     private String op1 = "";
     private final String error = "Error";
-    public static String symbol = "";
+    private String symbol = "";
     private final ArrayList<String> list = new ArrayList<>();
     Button b = new Button();
 
